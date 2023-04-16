@@ -1,0 +1,34 @@
+.form-container {
+  width: 66%;
+  max-width: 1080px;
+  margin: 40px auto;
+  color: #02295a;
+}
+
+.title {
+  margin: 0 0 10px;
+}
+
+.subtitle {
+  margin: 0 0 35px;
+  color: #9699ab;
+}
+
+.button {
+  padding: 5px 20px;
+  background-color: #02295a;
+  border: 1px solid #02295a;
+  border-radius: 5px;
+  font-family: 'JetBrains Mono', 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 2;
+  color: #fff;
+  transition: all .3s ease-in-out;
+  cursor: pointer;
+
+  &:hover, 
+  &:active {
+    background-color: #473dff;
+    border-color: #473dff;
+  }
+}

@@ -1,4 +1,4 @@
-import '../scss/app.scss';
+import '../scss/steps.scss';
 
 const STEPS_INFO = [{
     id: 1,
@@ -17,17 +17,17 @@ const STEPS_INFO = [{
 
 function Steps() {
   return (
-    <div className="steps-container">
+    <ul className="steps-list">
       {STEPS_INFO.map((step) => 
-        <div key={step.id} className={`step-${step.id}`}>
+        <li key={step.id} className={`step step-${step.id}`}>
           <span className="step-number">{step.id}</span>
           <div className="step-info">
-            <span className="step-title">Step {step.id}</span>
-            <span className="step-name">{step.name}</span>
+            <div className="step-title">Step {step.id}</div>
+            <div className="step-name">{step.name}</div>
           </div>
-        </div>
+        </li>
       )}
-    </div>
+    </ul>
   );
 }
 

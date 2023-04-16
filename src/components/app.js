@@ -4,7 +4,7 @@ import Form from './form';
 
 function App() {
   return (
-    <main className="App">
+    <main className="app">
       <Steps />
       <Form />
     </main>

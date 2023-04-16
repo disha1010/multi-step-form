@@ -1,0 +1,31 @@
+label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+input {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px 15px;
+  border-radius: 5px;
+  border: 1px solid #9699ab;
+  font-family: 'JetBrains Mono', 'Roboto', sans-serif;
+  font-size: 16px;
+  line-height: 2;
+  color: #02295a;
+
+  &::placeholder {
+    color: #9699ab;
+  }
+
+  &:focus {
+    outline: none;
+    border-color:  hsl(243, 100%, 62%);
+  }
+
+  &.error {
+    border-color: #ed3548;
+  }
+}

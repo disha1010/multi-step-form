@@ -1,15 +1,17 @@
-import '../scss/app.scss';
+import '../scss/form.scss';
 import PersonalInfo from './personal-info';
-import SelectPlan from './select-plan'
-import AddOns from './add-ons'
+import SelectPlan from './select-plan';
+import AddOns from './add-ons';
+import Summary from './summary';
 
 
 function Form() {
   return (
     <div className="form-container">
       <PersonalInfo />
-      <SelectPlan />
-      <AddOns />
+      {/* <SelectPlan /> */}
+      {/* <AddOns /> */}
+      {/* <Summary /> */}
     </div>
   );
 }
