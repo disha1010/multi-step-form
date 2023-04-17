@@ -15,11 +15,14 @@ const STEPS_INFO = [{
   },
 ];
 
-function Steps() {
+
+function Steps(props) {
+  let activeStepNumber = props.activeStepNumber;
+
   return (
     <ul className="steps-list">
       {STEPS_INFO.map((step) => 
-        <li key={step.id} className={`step step-${step.id}`}>
+        <li key={step.id} className={`step step-${step.id} ${activeStepNumber === step.id ? 'active' : ''}`}>
           <span className="step-number">{step.id}</span>
           <div className="step-info">
             <div className="step-title">Step {step.id}</div>

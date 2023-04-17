@@ -1,24 +1,26 @@
-import '../scss/app.scss';
+import '../scss/select-plan.scss';
+import ArcadeIcon from '../images/icon-arcade.svg';
 
-function SelectPlan() {
+function SelectPlan(props) {
+  const title = props.title;
+  const subtitle = props.subtitle;
+
   return (
     <>
-      <h2 className="title">Select your plan</h2>
-      <p className="subtitle">You have the option of monthly or yearly billing.</p>
-      <div className="plans">
-        <div className="plan-1">
-          <i className="plan-icon"></i>
+      <h2 className="title">{title}</h2>
+      <p className="subtitle">{subtitle}</p>
+      <ul className="plans">
+        <li className="plan plan-1">
+          <img src={ArcadeIcon} className="plan-icon" />
           <div className="plan-info">
-            <span className="plan-name"></span>
-            <span className="plan-cost"></span>
+            <div className="plan-name">Arcade</div>
+            <div className="plan-cost">$9/mo</div>
           </div>
-        </div>
-      </div>
+        </li>
+      </ul>
       <div className="plan-type">
         <input type="radio" />
       </div>
-      <button className="button primary">Next step</button>
-      <button className="button">Go back</button>
     </>
   );
 }

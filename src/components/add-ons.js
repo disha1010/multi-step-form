@@ -1,10 +1,13 @@
 import '../scss/app.scss';
 
-function AddOns() {
+function AddOns(props) {
+  const title = props.title;
+  const subtitle = props.subtitle;
+
   return (
     <>
-      <h2 className="title">Pick add-ons</h2>
-      <p className="subtitle">Add-ons help enhance your gaming experience.</p>
+      <h2 className="title">{title}</h2>
+      <p className="subtitle">{subtitle}</p>
       <div className="add-ons">
         <div className="add-ons-1">
           <div className="add-ons-info">
@@ -14,8 +17,6 @@ function AddOns() {
           <div className="add-ons-cost"></div>
         </div>
       </div>
-      <button className="button">Go back</button>
-      <button className="button primary">Next step</button>
     </>
   );
 }

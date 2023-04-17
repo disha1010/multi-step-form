@@ -1,10 +1,13 @@
 import '../scss/app.scss';
 
-function Summary() {
+function Summary(props) {
+  const title = props.title;
+  const subtitle = props.subtitle;
+
   return (
     <>
-      <h2 className="title">Finishing up</h2>
-      <p className="subtitle">Double-check everything looks OK before confirming.</p>
+      <h2 className="title">{title}</h2>
+      <p className="subtitle">{subtitle}</p>
       <div className="summary">
         <ul className="price-list">
           <li className="price-list-item main-cost">
@@ -28,8 +31,6 @@ function Summary() {
           <span className="cost"></span>
         </div>
       </div>
-      <button className="button">Go back</button>
-      <button className="button primary">Confirm</button>
     </>
   );
 }

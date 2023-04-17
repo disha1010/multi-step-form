@@ -39,4 +39,10 @@
   &-name {
     font-weight: 700;
   }
+  
+  &.active  .step-number {
+    background-color: #bfe2fd;
+    border-color: #bfe2fd;
+    color: #02295a;
+  }
 }
