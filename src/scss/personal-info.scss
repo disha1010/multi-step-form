@@ -29,3 +29,14 @@ label {
     border-color: #ed3548;
   }
 }
+
+.error-label {
+  display: none;
+  float: right;
+  font-size: 14px;
+  color: #ed3548;
+
+  &.visible {
+    display: block;
+  }
+}
