@@ -40,7 +40,7 @@ function Form(props) {
         {
           activeStepNumber !== 4 
           ? <button className="button primary" onClick={() => handleNextStep()}>Next step</button>
-          : <button className="button primary">Confirm</button>
+          : <button className="button success">Confirm</button>
         }
       </div>      
     </div>

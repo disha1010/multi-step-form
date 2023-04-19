@@ -1,0 +1,59 @@
+.price-list {
+  padding: 20px;
+  list-style: none;
+  background-color: #fafbff;
+  border-radius: 10px;
+}
+
+
+.price-list-item, 
+.total-cost {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-cost {
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #d6d9e6;
+
+  .cost-type {
+    font-weight: 700;
+  }
+
+  .cost {
+    font-weight: 700;
+  }
+}
+
+.additional-cost {
+  margin-bottom: 15px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .cost-type {
+    font-size: 14px;
+    color: #9699ab
+  }
+
+  .cost {
+    font-size: 14px;
+  }
+}
+
+.total-cost {
+  margin: 20px;
+
+  .cost-type {
+    font-size: 14px;
+    color: #9699ab
+  }
+
+  .cost {
+    font-weight: 700;
+    color: #473dff;
+  }
+}

@@ -49,4 +49,28 @@
       border-color: #473dff;
     }
   }
+
+  &.link {
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.2;
+    text-decoration: underline;
+
+    &:hover {
+      color: #473dff;
+    }
+  }
+
+  &.success {
+    padding: 5px 20px;
+    background-color: #473dff;
+    border-color: #473dff;
+    color: #fff;
+
+    &:hover, 
+    &:active {
+      background-color: #adbeff;
+      border-color: #adbeff;
+    }
+  }
 }

@@ -4,7 +4,7 @@ label {
   font-size: 14px;
 }
 
-input {
+.form input {
   display: block;
   width: 100%;
   margin-top: 5px;
@@ -22,7 +22,7 @@ input {
 
   &:focus {
     outline: none;
-    border-color:  hsl(243, 100%, 62%);
+    border-color:  #473dff;
   }
 
   &.error {

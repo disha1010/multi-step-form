@@ -1,4 +1,4 @@
-import '../scss/app.scss';
+import '../scss/summary.scss';
 
 function Summary(props) {
   const title = props.title;
@@ -12,23 +12,23 @@ function Summary(props) {
         <ul className="price-list">
           <li className="price-list-item main-cost">
             <div className="main-cost-info">
-              <span className="cost-type"></span>
-              <button className="button link"></button>
+              <div className="cost-type">Arcade (Yearly)</div>
+              <button className="button link">Change</button>
             </div>
-            <span className="cost"></span>
+            <span className="cost">$9/mo</span>
           </li>
           <li className="price-list-item additional-cost">
-            <span className="cost-type"></span>
-            <span className="cost"></span>
+            <span className="cost-type">Online service</span>
+            <span className="cost">+$1/mo</span>
           </li>
           <li className="price-list-item additional-cost">
-            <span className="cost-type"></span>
-            <span className="cost"></span>
+            <span className="cost-type">Large storage</span>
+            <span className="cost">+$2/mo</span>
           </li>
         </ul>
         <div className="total-cost">
-          <span className="cost-type"></span>
-          <span className="cost"></span>
+          <span className="cost-type">Total (per month)</span>
+          <span className="cost">+$12/mo</span>
         </div>
       </div>
     </>
