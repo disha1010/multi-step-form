@@ -31,12 +31,8 @@ label {
 }
 
 .error-label {
-  display: none;
+  display: block;
   float: right;
   font-size: 14px;
   color: #ed3548;
-
-  &.visible {
-    display: block;
-  }
 }

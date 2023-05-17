@@ -6,15 +6,17 @@ import Summary from './summary';
 
 function Form(props) {
   let activeStepNumber = props.activeStepNumber;
+  let errorMessage = props.errorMessage;
 
-  const activeStepForm = (currentStepNumber, appState, onUpdateInputValue) => {
+  const activeStepForm = (currentStepNumber, appState, onUpdateInputValue, errorMessage) => {
     switch (currentStepNumber) {
       case 1:
         return <PersonalInfo 
         model={appState.personal}
         title="Personal Info" 
         subtitle="Please provide your name, email address and phone number." 
-        onUpdateInputValue = {onUpdateInputValue} />
+        onUpdateInputValue={onUpdateInputValue}
+        errorMessage={errorMessage} />
       case 2:
         return <SelectPlan title="Select your plan" 
         model={appState.plan}
@@ -42,7 +44,7 @@ function Form(props) {
 
   return (
     <div className="form-container">
-      {activeStepForm(activeStepNumber, props.appState, props.onUpdateInputValue)}
+      {activeStepForm(activeStepNumber, props.appState, props.onUpdateInputValue, errorMessage)}
 
       <div className="buttons-bar">
         {activeStepNumber !== 1 && <button className="button" onClick={() => handlePreviousStep()}>Go back</button>}
