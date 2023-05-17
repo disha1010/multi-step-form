@@ -7,6 +7,8 @@ import Summary from './summary';
 function Form(props) {
   let activeStepNumber = props.activeStepNumber;
   let errorMessage = props.errorMessage;
+  let appState = props.appState;
+  let onUpdateInputValue = props.onUpdateInputValue;
 
   const activeStepForm = (currentStepNumber, appState, onUpdateInputValue, errorMessage) => {
     switch (currentStepNumber) {
@@ -44,7 +46,7 @@ function Form(props) {
 
   return (
     <div className="form-container">
-      {activeStepForm(activeStepNumber, props.appState, props.onUpdateInputValue, errorMessage)}
+      {activeStepForm(activeStepNumber, appState, onUpdateInputValue, errorMessage)}
 
       <div className="buttons-bar">
         {activeStepNumber !== 1 && <button className="button" onClick={() => handlePreviousStep()}>Go back</button>}
