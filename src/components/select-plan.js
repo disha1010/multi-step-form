@@ -31,7 +31,7 @@ function SelectPlan(props) {
       <p className="subtitle">{subtitle}</p>
       <ul className="plans">
         {PLAN_TYPE.map((plan) => 
-          <li key={plan.id} className={`plan plan-${plan.id}`}>
+          <li key={plan.id} className={`plan ,plan-${plan.id}`}>
             <img src={plan.icon} className="plan-icon" />
             <div className="plan-info">
               <div className="plan-name">{plan.name}</div>

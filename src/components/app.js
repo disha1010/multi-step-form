@@ -4,61 +4,51 @@ import '../scss/app.scss';
 import Steps from './steps';
 import Form from './form';
 
-// const validate = () => {
-//   const nameField = document.getElementById("name");
-//   let valid = true;
-
-//   console.log(nameField)
-//   if (!nameField.value) {
-//     const nameError = document.getElementById("name-error");
-//     nameError.classList.add("visible");
-//     nameField.classList.add("error");
-//   } 
-
-//   return valid;
-// }
-
 class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      model: {
+        personal:{
+          fullName: '33',
+          email: '44',
+          phone: '555',
+        },
+        plan: {},
+        addons: {},
+      },
       activeStepNumber: 1,
-    }
+    };
+    this.onUpdateInputValue = this.onUpdateInputValue.bind(this);
+  }
+
+  onUpdateInputValue = (modelKey, key, value) => {
+    this.setState((prevState) => ({  //toDo
+      ...prevState,
+      model: {
+        ...prevState.model,
+        [modelKey]: {
+          ...prevState.model[modelKey],
+          [key]: value,
+        }
+      }
+    }))
   }
 
   nextStep = () => {
     let currentStep = this.state.activeStepNumber;
-    const nameField = document.getElementById("name");
-    const emailField = document.getElementById("email");
-    const phoneField = document.getElementById("phone");
-    let valid = true;
-  
-    console.log(nameField);
-    if (!nameField.value) {
-      const nameError = document.getElementById("name-error");
-      nameError.classList.add("visible");
-      nameField.classList.add("error");
-      valid = false;
-    } else if (!emailField.value) {
-      const emailError = document.getElementById("email-error");
-      emailError.classList.add("visible");
-      emailField.classList.add("error");
-      valid = false;
-    } else if (!phoneField.value) {
-      const phoneError = document.getElementById("phone-error");
-      phoneError.classList.add("visible");
-      phoneField.classList.add("error");
-      valid = false;
-    }
-
-    valid && currentStep++;
-    this.setState({activeStepNumber: currentStep});
+    currentStep += 1;
+    this.setState({
+      activeStepNumber: currentStep,
+    });
   }
 
   previousStep = () => {
-    let currentStep = this.state.activeStepNumber
+    let currentStep = this.state.activeStepNumber;
     currentStep -= 1;
-    this.setState({activeStepNumber: currentStep});
+    this.setState({
+      activeStepNumber: currentStep,
+    });
   }
   
 
@@ -68,8 +58,10 @@ class App extends React.Component {
         <Steps activeStepNumber = {this.state.activeStepNumber} />
         <Form 
           activeStepNumber = {this.state.activeStepNumber}  
+          appState={this.state.model}
           onNextStep = {this.nextStep}
           onPreviousStep = {this.previousStep}
+          onUpdateInputValue = {this.onUpdateInputValue}
         />
       </main>
     );
