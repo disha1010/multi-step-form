@@ -28,8 +28,8 @@ function AddOns(props) {
 
   return (
     <>
-      <h2 className="title">{title}</h2>
-      <p className="subtitle">{subtitle}</p>
+      <h2 className="title">Pick add-ons</h2>
+      <p className="subtitle">Add-ons help enhance your gaming experience.</p>
       <ul className="add-ons">
         {ADD_ONS.map((item) => 
           <li key={item.id} className={`add-on add-on-${item.id} ${props.model[item.name].isAddonChecked ? 'selected' : ''}`}>

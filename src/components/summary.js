@@ -6,8 +6,8 @@ function Summary(props) {
 
   return (
     <>
-      <h2 className="title">{title}</h2>
-      <p className="subtitle">{subtitle}</p>
+      <h2 className="title">Finishing up</h2>
+      <p className="subtitle">Double-check everything looks OK before confirming.</p>
       <div className="summary">
         <ul className="price-list">
           <li className="price-list-item main-cost">

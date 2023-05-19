@@ -37,8 +37,8 @@ function SelectPlan(props) {
 
   return (
     <>
-      <h2 className="title">{title}</h2>
-      <p className="subtitle">{subtitle}</p>
+      <h2 className="title">Select your plan</h2>
+      <p className="subtitle">You have the option of monthly or yearly billing.</p>
       <ul className="plans">
         {PLAN_TYPE.map((plan) => 
           <li 

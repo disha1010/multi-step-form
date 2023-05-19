@@ -14,8 +14,8 @@ function PersonalInfo(props) {
 
   return (
     <>
-      <h2 className="title">{props.title}</h2>
-      <p className="subtitle">{props.subtitle}</p>
+      <h2 className="title">Personal Info</h2>
+      <p className="subtitle">Please provide your name, email address and phone number.</p>
       <form action="" className="form" id="personal-info-form">
         <label htmlFor="name">
           Name

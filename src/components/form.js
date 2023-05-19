@@ -17,27 +17,23 @@ function Form(props) {
     switch (currentStepNumber) {
       case 1:
         return <PersonalInfo 
-        model={appState.personal}
-        title="Personal Info" 
-        subtitle="Please provide your name, email address and phone number." 
-        onUpdateInputValue={onUpdateInputValue}
-        errorMessage={errorMessage} />
+          model={appState.personal}
+          onUpdateInputValue={onUpdateInputValue}
+          errorMessage={errorMessage} 
+        />
       case 2:
-        return <SelectPlan title="Select your plan" 
-        model={appState.plan}
-        subtitle="You have the option of monthly or yearly billing." 
-        onSelectPlan={onSelectPlan}
-        onSelectPlanType={onSelectPlanType}
+        return <SelectPlan
+          model={appState.plan}
+          onSelectPlan={onSelectPlan}
+          onSelectPlanType={onSelectPlanType}
         />
       case 3:
-        return <AddOns title="Pick add-ons" 
-        model={appState.addons}
-        subtitle="Add-ons help enhance your gaming experience."
-        onSelectAddon={onSelectAddon} />
+        return <AddOns
+          model={appState.addons}
+          onSelectAddon={onSelectAddon} 
+        />
       case 4:
-        return <Summary 
-        title="Finishing up" 
-        subtitle="Double-check everything looks OK before confirming." />    
+        return <Summary />    
       default:
         break;
     }
