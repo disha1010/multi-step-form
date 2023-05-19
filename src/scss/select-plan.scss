@@ -116,3 +116,12 @@ input:focus + .slider {
 input:checked + .slider:before {
   transform: translateX(22px);
 }
+
+.plan-error-label {
+  position: absolute;
+  right: 0;
+  top: -25px;
+  margin: 0;
+  font-size: 14px;
+  color: #ed3548;
+}

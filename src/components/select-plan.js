@@ -44,7 +44,7 @@ function SelectPlan(props) {
             className={`plan plan-${plan.id} ${currentPlan === plan.name ? 'selected' : ''}`} 
             onClick={() => handleSelectPlan(plan.name, plan.cost)}
           >
-            <img src={plan.icon} className="plan-icon" />
+            <img src={plan.icon} alt={`icon for ${plan.name} plan`} className="plan-icon" />
             <div className="plan-info">
               <div className="plan-name">{plan.name}</div>
               <div className="plan-cost">${plan.cost}/mo</div>
@@ -55,7 +55,7 @@ function SelectPlan(props) {
       <div className="plan-type">
         <span className={`switch-label ${currentPlanType === 'Monthly' && 'selected'}`}>Monthly</span>
         <label className="switch">
-          <input type="checkbox" onChange={e => handleSelectPlanType(e.target.checked)} />
+          <input type="checkbox" onChange={e => handleSelectPlanType(e.target.checked)} checked={currentPlanType === 'Yearly'} />
           <span className="slider"></span>
         </label>
         <span className={`switch-label ${currentPlanType === 'Yearly' && 'selected'}`}>Yearly</span>

@@ -15,9 +15,11 @@
 }
 
 .buttons-bar {
+  position: relative;
   display: flex;
   justify-content: space-between;
   margin-top: 40px;
+  flex-direction: row-reverse;
 }
 
 .button {

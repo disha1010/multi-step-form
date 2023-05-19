@@ -6,7 +6,7 @@ label {
 
 .form input {
   display: block;
-  width: 100%;
+  width: calc(100% - 32px);
   margin-top: 5px;
   padding: 5px 15px;
   border-radius: 5px;

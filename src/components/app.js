@@ -166,12 +166,18 @@ class App extends React.Component {
   nextStep2 = () => {
     let currentStep = this.state.activeStepNumber;
     let fields = this.state.model.plan;
+    let errors = {};
 
     if (!!fields['planName'] && !!fields['cost'] && !!fields['currentPlanType']) {
       currentStep += 1;
+    } else {
+      errors["plan"] = "You must choose a plan";
     }
 
-    this.setState({activeStepNumber: currentStep});
+    this.setState({
+      activeStepNumber: currentStep, 
+      errors: errors,
+    });
   }
 
   nextStep3 = () => {
@@ -187,7 +193,6 @@ class App extends React.Component {
   }
 
   onJumpToSecondStep = () => this.setState({activeStepNumber: 2})
-  
 
   render() {
     return (

@@ -5,7 +5,6 @@ function Summary(props) {
   const planCost = props.planState.cost;
   const planType = props.planState.currentPlanType;
   const addons = props.addonsState;
-  const activeStepNumber = props.activeStepNumber
 
   const totalCost = () => {
     const addonsTotalCost = Object.keys(addons)

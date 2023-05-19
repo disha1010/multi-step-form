@@ -1,4 +1,15 @@
 .app {
   display: flex;
   margin: 20px 15px;
+  height: calc(100vh - 40px);
+}
+
+.thank-you-step {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.icon-thank-you {
+  margin-bottom: 20px;
 }

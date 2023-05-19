@@ -23,13 +23,19 @@ function AddOns(props) {
     props.onSelectAddon('addons', isChecked, name, cost);
   }
 
+
+
   return (
     <>
       <h2 className="title">Pick add-ons</h2>
       <p className="subtitle">Add-ons help enhance your gaming experience.</p>
       <ul className="add-ons">
         {ADD_ONS.map((item) => 
-          <li key={item.id} className={`add-on add-on-${item.id} ${props.model[item.name].isAddonChecked ? 'selected' : ''}`}>
+          <li 
+            key={item.id} 
+            className={`add-on add-on-${item.id} ${props.model[item.name].isAddonChecked ? 'selected' : ''}`} 
+            onClick={() => handleSelectAddon(!props.model[item.name].isAddonChecked, item.name, item.cost)}
+          >
             <input 
               className="add-on-checkbox" 
               type="checkbox" 
