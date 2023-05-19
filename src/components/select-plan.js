@@ -3,26 +3,23 @@ import ArcadeIcon from '../images/icon-arcade.svg';
 import AdvancedIcon from '../images/icon-advanced.svg';
 import ProIcon from '../images/icon-pro.svg';
 
-const PLAN_TYPE = {
-  arcade: {
+const PLAN_TYPE = [{
     id: 1,
     name: "Arcade",
     cost: "9",
     icon: ArcadeIcon,
-  }, 
-  advanced: {
+  }, {
     id: 2,
     name: "Advanced",
     cost: "12",
     icon: AdvancedIcon,
-  }, 
-  pro: {
+  }, {
     id: 3,
     name: "Pro",
     cost: "15",
     icon: ProIcon,
   },
-}
+]
 
 function SelectPlan(props) {
   const title = props.title;
@@ -43,12 +40,16 @@ function SelectPlan(props) {
       <h2 className="title">{title}</h2>
       <p className="subtitle">{subtitle}</p>
       <ul className="plans">
-        {Object.keys(PLAN_TYPE).map((plan) => 
-          <li key={PLAN_TYPE[plan].id} className={`plan plan-${PLAN_TYPE[plan].id} ${currentPlan === PLAN_TYPE[plan].name ? 'selected' : ''}`} onClick={() => handleSelectPlan(PLAN_TYPE[plan].name, PLAN_TYPE[plan].cost)}>
-            <img src={PLAN_TYPE[plan].icon} className="plan-icon" />
+        {PLAN_TYPE.map((plan) => 
+          <li 
+            key={plan.id} 
+            className={`plan plan-${plan.id} ${currentPlan === plan.name ? 'selected' : ''}`} 
+            onClick={() => handleSelectPlan(plan.name, plan.cost)}
+          >
+            <img src={plan.icon} className="plan-icon" />
             <div className="plan-info">
-              <div className="plan-name">{PLAN_TYPE[plan].name}</div>
-              <div className="plan-cost">${PLAN_TYPE[plan].cost}/mo</div>
+              <div className="plan-name">{plan.name}</div>
+              <div className="plan-cost">${plan.cost}/mo</div>
             </div>
           </li>
         )}

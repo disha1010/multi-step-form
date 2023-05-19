@@ -11,8 +11,9 @@ function Form(props) {
   let onUpdateInputValue = props.onUpdateInputValue;
   let onSelectPlan = props.onSelectPlan;
   let onSelectPlanType = props.onSelectPlanType;
+  let onSelectAddon = props.onSelectAddon;
 
-  const activeStepForm = (currentStepNumber, appState, onUpdateInputValue, errorMessage, onSelectPlan, onSelectPlanType) => {
+  const activeStepForm = (currentStepNumber, appState, onUpdateInputValue, errorMessage, onSelectPlan, onSelectPlanType, onSelectAddon) => {
     switch (currentStepNumber) {
       case 1:
         return <PersonalInfo 
@@ -31,7 +32,8 @@ function Form(props) {
       case 3:
         return <AddOns title="Pick add-ons" 
         model={appState.addons}
-        subtitle="Add-ons help enhance your gaming experience." />
+        subtitle="Add-ons help enhance your gaming experience."
+        onSelectAddon={onSelectAddon} />
       case 4:
         return <Summary 
         title="Finishing up" 
@@ -59,7 +61,7 @@ function Form(props) {
 
   return (
     <div className="form-container">
-      {activeStepForm(activeStepNumber, appState, onUpdateInputValue, errorMessage, onSelectPlan, onSelectPlanType)}
+      {activeStepForm(activeStepNumber, appState, onUpdateInputValue, errorMessage, onSelectPlan, onSelectPlanType, onSelectAddon)}
 
       <div className="buttons-bar">
         {activeStepNumber !== 1 && <button className="button" onClick={() => handlePreviousStep()}>Go back</button>}

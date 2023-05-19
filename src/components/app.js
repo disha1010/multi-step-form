@@ -20,7 +20,23 @@ class App extends React.Component {
           currentPlan: '',
           currentPlanType: 'Monthly',
         },
-        addons: {},
+        addons: {
+          'Online service': {
+            name: '', 
+            cost: '', 
+            isAddonChecked: false,
+          }, 
+          'Large storage': {
+            name: '', 
+            cost: '', 
+            isAddonChecked: false,
+          },
+          'Customizable Profile': {
+            name: '', 
+            cost: '', 
+            isAddonChecked: false,
+          },
+        }
       },
       errors: {},
       activeStepNumber: 1,
@@ -74,6 +90,25 @@ class App extends React.Component {
         }
       }
     }))
+  }
+
+  onSelectAddon = (modelKey, isAddonChecked, addonName, addonCost) => {
+    this.setState((prevState) => ({
+      ...prevState,
+      model: {
+        ...prevState.model,
+        [modelKey]:{
+          ...prevState.model[modelKey],
+          [addonName]: {
+            name: addonName, 
+            cost: addonCost, 
+            isAddonChecked: isAddonChecked,
+          }
+        },
+      }
+    }))
+
+    console.log(this.state.model.addons);
   }
 
   handleValidation = () =>  {
@@ -141,6 +176,12 @@ class App extends React.Component {
     this.setState({activeStepNumber: currentStep});
   }
 
+  nextStep3 = () => {
+    let currentStep = this.state.activeStepNumber;
+    currentStep += 1;
+    this.setState({activeStepNumber: currentStep});
+  }
+
   previousStep = () => {
     let currentStep = this.state.activeStepNumber;
     currentStep -= 1;
@@ -157,11 +198,13 @@ class App extends React.Component {
           appState = {this.state.model}
           onNextStep1 = {this.nextStep1}
           onNextStep2 = {this.nextStep2}
+          onNextStep3 = {this.nextStep3}
           onPreviousStep = {this.previousStep}
           onUpdateInputValue = {this.onUpdateInputValue}
           errorMessage = {this.state.errors}
           onSelectPlan = {this.onSelectPlan}
           onSelectPlanType = {this.onSelectPlanType}
+          onSelectAddon = {this.onSelectAddon}
         />
       </main>
     );

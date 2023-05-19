@@ -29,6 +29,10 @@
     color: #473dff;
     font-size: 14px;
   }
+
+  &:hover {
+    border-color: #473dff;
+  }
   
   &.selected {
     background-color: #fafbff;
