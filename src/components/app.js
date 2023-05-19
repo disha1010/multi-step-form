@@ -107,8 +107,6 @@ class App extends React.Component {
         },
       }
     }))
-
-    console.log(this.state.model.addons);
   }
 
   handleValidation = () =>  {
@@ -187,6 +185,8 @@ class App extends React.Component {
     currentStep -= 1;
     this.setState({activeStepNumber: currentStep});
   }
+
+  onJumpToSecondStep = () => this.setState({activeStepNumber: 2})
   
 
   render() {
@@ -205,6 +205,7 @@ class App extends React.Component {
           onSelectPlan = {this.onSelectPlan}
           onSelectPlanType = {this.onSelectPlanType}
           onSelectAddon = {this.onSelectAddon}
+          onJumpToSecondStep = {this.onJumpToSecondStep}
         />
       </main>
     );

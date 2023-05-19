@@ -22,8 +22,6 @@ const PLAN_TYPE = [{
 ]
 
 function SelectPlan(props) {
-  const title = props.title;
-  const subtitle = props.subtitle;
   const currentPlan = props.model.currentPlan;
   const currentPlanType = props.model.currentPlanType;
 

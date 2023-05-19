@@ -19,9 +19,6 @@ const ADD_ONS = [{
 ]
 
 function AddOns(props) {
-  const title = props.title;
-  const subtitle = props.subtitle;
-
   const handleSelectAddon = (isChecked, name, cost) => {
     props.onSelectAddon('addons', isChecked, name, cost);
   }

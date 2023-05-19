@@ -12,8 +12,9 @@ function Form(props) {
   let onSelectPlan = props.onSelectPlan;
   let onSelectPlanType = props.onSelectPlanType;
   let onSelectAddon = props.onSelectAddon;
+  let onJumpToSecondStep = props.onJumpToSecondStep;
 
-  const activeStepForm = (currentStepNumber, appState, onUpdateInputValue, errorMessage, onSelectPlan, onSelectPlanType, onSelectAddon) => {
+  const activeStepForm = (currentStepNumber, appState, onUpdateInputValue, errorMessage, onSelectPlan, onSelectPlanType, onSelectAddon, onJumpToSecondStep) => {
     switch (currentStepNumber) {
       case 1:
         return <PersonalInfo 
@@ -33,7 +34,11 @@ function Form(props) {
           onSelectAddon={onSelectAddon} 
         />
       case 4:
-        return <Summary />    
+        return <Summary
+          planState={appState.plan}
+          addonsState={appState.addons}
+          onJumpToSecondStep={onJumpToSecondStep}
+        />    
       default:
         break;
     }
@@ -57,13 +62,13 @@ function Form(props) {
 
   return (
     <div className="form-container">
-      {activeStepForm(activeStepNumber, appState, onUpdateInputValue, errorMessage, onSelectPlan, onSelectPlanType, onSelectAddon)}
+      {activeStepForm(activeStepNumber, appState, onUpdateInputValue, errorMessage, onSelectPlan, onSelectPlanType, onSelectAddon, onJumpToSecondStep)}
 
       <div className="buttons-bar">
         {activeStepNumber !== 1 && <button className="button" onClick={() => handlePreviousStep()}>Go back</button>}
-        {activeStepNumber === 1 && <button className="button primary" onClick={() => handleNextStep1()}>Next step 1</button>}
-        {activeStepNumber === 2 && <button className="button primary" onClick={() => handleNextStep2()}>Next step 2</button>}
-        {activeStepNumber === 3 && <button className="button primary" onClick={() => handleNextStep3()}>Next step 3</button>}
+        {activeStepNumber === 1 && <button className="button primary" onClick={() => handleNextStep1()}>Next step</button>}
+        {activeStepNumber === 2 && <button className="button primary" onClick={() => handleNextStep2()}>Next step</button>}
+        {activeStepNumber === 3 && <button className="button primary" onClick={() => handleNextStep3()}>Next step</button>}
         {activeStepNumber === 4 && <button className="button success">Confirm</button>}
       </div>      
     </div>
